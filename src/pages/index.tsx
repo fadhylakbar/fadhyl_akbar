@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { useState } from "react";
 import { BsInstagram, BsLinkedin } from "react-icons/bs";
-import { FiGithub } from "react-icons/fi";
 import { FcCheckmark } from "react-icons/fc";
 import { CiLocationOn } from "react-icons/ci";
 import { AiOutlinePhone } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [tab, setTab] = useState(1);
-  console.log("as");
 
   const Projects = [
     {
@@ -45,16 +44,26 @@ export default function Home() {
   ];
 
   return (
-    <div className={`${"container"}`}>
-      <div className="flex flex-col items-center mt-4">
+    <div className={`${"container"} bg-white bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg`}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col items-center mt-4"
+      >
         <span className="text-[20px] font-bold text-slate-700">
           Fadhyl Akbar
         </span>
         <span className="text-[14px] font-semibold text-slate-400">
           Web Frontend Developer
         </span>
-      </div>
-      <div className="flex justify-center mt-8 p-2">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className="flex justify-center mt-8 p-2"
+      >
         <div className="flex gap-6 items-center">
           <div className="image">
             <img src="photo.png" />
@@ -80,8 +89,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="mt-10 p-1 flex rounded-none  sm:rounded-full border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] ">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.1 }}
+        className="mt-10 p-1 flex rounded-none  sm:rounded-full border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] "
+      >
         <div
           onClick={() => setTab(1)}
           className={`${
@@ -106,14 +120,19 @@ export default function Home() {
         >
           Contact
         </div>
-      </div>
+      </motion.div>
       {tab === 1 && (
-        <div className="mt-6 grid grid-cols-2 gap-2">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.3 }}
+          className="mt-6 grid grid-cols-2 gap-2"
+        >
           {Projects.map((e, index) => {
             return (
-              <Link href={e.link} key={index} className="relative border">
-                <img src={e.image} alt="Louvre" />
-                <div className=" hover:animate-fade-in-down cursor-pointer opacity-0 h-full absolute inset-x-0 bottom-0 hover:opacity-80 bg-black flex justify-center items-center">
+              <Link href={e.link} key={index} className="relative rounded border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]">
+                <img className="rounded" src={e.image} alt="Louvre" />
+                <div className=" rounded hover:animate-fade-in-down cursor-pointer opacity-0 h-full absolute inset-x-0 bottom-0 hover:opacity-80 bg-black flex justify-center items-center">
                   <span className="opacity-1 text-white font-bold text-xl">
                     {e.name}
                   </span>
@@ -121,11 +140,16 @@ export default function Home() {
               </Link>
             );
           })}
-        </div>
+        </motion.div>
       )}
       {tab === 2 && (
         <div className="mt-6 grid grid-cols-2 gap-8">
-          <div className="p-3">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="p-3"
+          >
             <span className="text-md font-bold text-slate-700">
               Programing Languange
             </span>
@@ -139,8 +163,13 @@ export default function Home() {
                 <span className="text-slate-700">Typescript</span>
               </div>
             </div>
-          </div>
-          <div className="p-3">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            className="p-3"
+          >
             <span className="text-md font-bold text-slate-700">FrameWork</span>
             <div className="mt-4 flex flex-col gap-3">
               <div className="flex gap-2 items-center">
@@ -152,8 +181,13 @@ export default function Home() {
                 <span className="text-slate-700">ReactJs</span>
               </div>
             </div>
-          </div>
-          <div className="p-3">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9 }}
+            className="p-3"
+          >
             <span className="text-md font-bold text-slate-700">Styling</span>
             <div className="mt-4 flex flex-col gap-3">
               <div className="flex gap-2 items-center">
@@ -173,8 +207,13 @@ export default function Home() {
                 <span className="text-slate-700">Bootstrap</span>
               </div>
             </div>
-          </div>
-          <div className="p-3">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.1 }}
+            className="p-3"
+          >
             <span className="text-md font-bold text-slate-700">
               Version Control
             </span>
@@ -192,8 +231,13 @@ export default function Home() {
                 <span className="text-slate-700">Github</span>
               </div>
             </div>
-          </div>
-          <div className="p-3">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.3 }}
+            className="p-3"
+          >
             <span className="text-md font-bold text-slate-700">Others</span>
             <div className="mt-4 flex flex-col gap-3">
               <div className="flex gap-2 items-center">
@@ -205,11 +249,16 @@ export default function Home() {
                 <span className="text-slate-700">Insomnia</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       )}
       {tab === 3 && (
-        <div className="mt-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="mt-6"
+        >
           <div className="p-3">
             <div className="mt-4 flex flex-col gap-3">
               <div className="flex gap-2 items-center">
@@ -234,7 +283,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );
