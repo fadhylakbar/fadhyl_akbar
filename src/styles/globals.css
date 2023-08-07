@@ -16,6 +16,7 @@ body {
 .container {
   max-width: 600px;
   position: absolute;
+  background-color: transparent;
   left: 50%;
   transform: translateX(-50%);
   min-height: 100vh;
