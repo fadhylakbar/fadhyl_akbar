@@ -9,7 +9,7 @@ import { BiLogoGmail } from "react-icons/bi";
 
 export default function Home() {
   const [tab, setTab] = useState(1);
-  console.log("as")
+  console.log("as");
 
   const Projects = [
     {
@@ -45,7 +45,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="container">
+    <div className={`${"container"}`}>
       <div className="flex flex-col items-center mt-4">
         <span className="text-[20px] font-bold text-slate-700">
           Fadhyl Akbar
@@ -57,9 +57,7 @@ export default function Home() {
       <div className="flex justify-center mt-8 p-2">
         <div className="flex gap-6 items-center">
           <div className="image">
-            <img
-              src="photo.png"
-            />
+            <img src="photo.png" />
           </div>
           <div className="flex gap-5">
             <div className="flex flex-col text-center">
@@ -83,28 +81,28 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="mt-10 flex">
+      <div className="mt-10 p-1 flex rounded-none  sm:rounded-full border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] ">
         <div
           onClick={() => setTab(1)}
           className={`${
-            tab === 1 ? "bg-slate-100" : ""
-          } cursor-pointer shadow hover:bg-gray-100 text-gray-800 py-2 px-4 flex-1 text-center`}
+            tab === 1 ? "bg-gray-100 text-gray-950" : "text-gray-500"
+          }  cursor-pointer hover:bg-gray-100 p-2 flex-1 text-center rounded-none sm:rounded-full hover:text-gray-950`}
         >
           Project
         </div>
         <div
           onClick={() => setTab(2)}
           className={`${
-            tab === 2 ? "bg-slate-100" : ""
-          } cursor-pointer shadow hover:bg-gray-100 text-gray-800 py-2 px-4 flex-1 text-center`}
+            tab === 2 ? "bg-gray-100 text-gray-950" : "text-gray-500"
+          } cursor-pointer hover:bg-gray-100 p-2 flex-1 text-center rounded-none sm:rounded-full hover:text-gray-950`}
         >
           Skill
         </div>
         <div
           onClick={() => setTab(3)}
           className={`${
-            tab === 3 ? "bg-slate-100" : ""
-          } cursor-pointer shadow hover:bg-gray-100 text-gray-800 py-2 px-4 flex-1 text-center`}
+            tab === 3 ? "bg-gray-100 text-gray-950" : "text-gray-500"
+          } cursor-pointer hover:bg-gray-100 p-2 flex-1 text-center rounded-none sm:rounded-full hover:text-gray-950`}
         >
           Contact
         </div>
@@ -116,9 +114,7 @@ export default function Home() {
               <Link href={e.link} key={index} className="relative border">
                 <img src={e.image} alt="Louvre" />
                 <div className=" hover:animate-fade-in-down cursor-pointer opacity-0 h-full absolute inset-x-0 bottom-0 hover:opacity-80 bg-black flex justify-center items-center">
-                  <span
-                    className="opacity-1 text-white font-bold text-xl"
-                  >
+                  <span className="opacity-1 text-white font-bold text-xl">
                     {e.name}
                   </span>
                 </div>
@@ -243,6 +239,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
