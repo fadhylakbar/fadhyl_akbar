@@ -10,6 +10,8 @@ import { motion } from "framer-motion";
 export default function Home() {
   const [tab, setTab] = useState(1);
 
+  console.log("test")
+
   const Projects = [
     {
       name: "BedasMarket",
