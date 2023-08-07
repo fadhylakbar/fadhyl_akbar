@@ -6,47 +6,46 @@ import { CiLocationOn } from "react-icons/ci";
 import { AiOutlinePhone } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Home() {
   const [tab, setTab] = useState(1);
-
-  console.log("test")
 
   const Projects = [
     {
       name: "BedasMarket",
       link: "https://www.bedasmarket.com/",
-      image: "1.png",
+      image: "/1.png",
     },
     {
       name: "Riseloka",
       link: "https://www.riseloka.com/",
-      image: "2.png",
+      image: "/2.png",
     },
     {
       name: "Cleora-ERP",
       link: "",
-      image: "4.png",
+      image: "/4.png",
     },
     {
       name: "ClerinaMarketing",
       link: "",
-      image: "3.png",
+      image: "/3.png",
     },
     {
       name: "Admin3Second",
       link: "",
-      image: "5.png",
+      image: "/5.png",
     },
     {
       name: "RetainCrm",
       link: "",
-      image: "6.png",
+      image: "/6.png",
     },
   ];
 
   return (
-    <div className={`${"container"} bg-white bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg`}>
+    <div className={`${"container"}`}>
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -133,8 +132,8 @@ export default function Home() {
           {Projects.map((e, index) => {
             return (
               <Link href={e.link} key={index} className="relative rounded border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]">
-                <img className="rounded" src={e.image} alt="Louvre" />
-                <div className=" rounded hover:animate-fade-in-down cursor-pointer opacity-0 h-full absolute inset-x-0 bottom-0 hover:opacity-80 bg-black flex justify-center items-center">
+                <Image className="rounded" width={300} height={200} src={e.image} alt="Louvre" />
+                <div className="rounded hover:animate-fade-in-down cursor-pointer opacity-0 h-full absolute inset-x-0 bottom-0 hover:opacity-80 bg-black flex justify-center items-center">
                   <span className="opacity-1 text-white font-bold text-xl">
                     {e.name}
                   </span>
