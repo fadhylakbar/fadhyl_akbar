@@ -11,6 +11,8 @@ import Image from "next/image";
 export default function Home() {
   const [tab, setTab] = useState(1);
 
+  console.log("test")
+
   const Projects = [
     {
       name: "BedasMarket",
